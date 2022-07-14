@@ -42,7 +42,11 @@
   display: flex;
   margin-left: 20%;
   margin-right: 20%;
-  border-bottom-left-radius: 2%;
-  border-bottom-right-radius: 2%;
+  border-bottom-left-radius: 1%;
+  border-bottom-right-radius: 1%;
 }
 
+.home-button {
+  all : unset;
+  
+}

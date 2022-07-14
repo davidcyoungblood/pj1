@@ -5,9 +5,12 @@
 }
 
 .App-logo {
-  height: 10vmin;
+  height: 8vmin;
   pointer-events: none;
-  align-items: flex-end;
+  align-items:flex;
+  display: flex;
+  margin: 0.8%;
+
 
 }
 

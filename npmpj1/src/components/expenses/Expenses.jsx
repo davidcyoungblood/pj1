@@ -5,7 +5,8 @@ export const Expenses = ({exp, setExp, expenses}) => {
     const handleDelete = async (e) => {
         try {
             e.preventDefault(); 
-            await axios.delete()
+            await axios.delete(`localhost:8080/pj1/api/${exp.id}`); 
+            setExp(expenses.filter(expense => exp.id !== expense.id)); 
         }
         catch (err) {
             console.error(err); 
@@ -13,5 +14,14 @@ export const Expenses = ({exp, setExp, expenses}) => {
 
 
     }
+
+    return (
+        <tr>
+            <td>{exp.name}</td>
+            <td>{exp.reason}</td>
+            <td>{exp.status.status}</td>
+            <button onClick={handleDelete}>Delete</button>
+        </tr>
+    )
 
 }

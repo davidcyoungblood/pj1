@@ -15,7 +15,15 @@ function App() {
         
         <h1 >Project 1</h1>
       </header>
-      <h1 className = "App-navigation">Navigation</h1>
+      <section className = "App-navigation">
+        <div><Link to = "/forms"> Add Expenses</Link></div>
+        <div><Link to = "/table"> View Table</Link></div>
+      </section>
+      <Routes>
+        <Route path = "/forms" element = {<Forms />}/>
+        <Route path = "/table" element = {<Table />}/>
+        <Route path = "/*" element = {<Error />}/>
+      </Routes>
       <p className = "App-mainContent">Hello</p>  
     </div>
 

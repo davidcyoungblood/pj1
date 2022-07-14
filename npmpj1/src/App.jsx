@@ -14,17 +14,32 @@ function App() {
         <button className="home-button">
           <img src={logo} className="App-logo" alt="logo" />
         </button>
-
-        <h1>Project 1</h1>
       </header>
-      <section className="App-navigation">
-      <a href="/error" className = "App-pages">Error</a>
-      <a href="/error" className = "App-pages">Error</a>
-      <a href="/error" className = "App-pages">Error</a>
-        <a href="/error" className = "App-pages">Error</a>
-      </section>
-
-      <p className="App-mainContent">Hello</p>
+      <BrowserRouter>
+        <Navigation>
+          {/* Component Composition */}
+          <section className="App-navigation">
+            {/* Anchor tags refresh the page. Instead, I'll use Link from React-Router-dom */}
+            {/* <a href="/day1">Day1</a> */}
+            <div className="App-pages">
+              <Link className="App-pages" to="/expense">
+                Add Expense
+              </Link>
+            </div>
+            <div className="App-pages">
+              <Link className="App-pages" to="/table">
+                View Table
+              </Link>
+            </div>
+          </section>
+        </Navigation>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/expense" element={<Forms />} />
+          <Route path="/table" element={<Table />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

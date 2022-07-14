@@ -5,13 +5,11 @@
 }
 
 .App-logo {
-  height: 8vmin;
+  max-height: 6vmin;
   pointer-events: none;
   align-items:flex;
   display: flex;
-  margin: 0.8%;
-
-
+  margin: 10%;
 }
 
 
@@ -39,6 +37,8 @@
 .App-pages {
   color : white; 
   text-decoration: none;
+  margin-left: 10px; 
+  ;
 }
 
 .App-mainContent {

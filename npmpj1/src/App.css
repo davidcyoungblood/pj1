@@ -1,78 +1,97 @@
 .App {
   text-align: center;
-  background-color: #EBE5DC;
+  background-color: #ebe5dc;
   min-height: 100vmin;
 }
 
 .App-logo {
   max-height: 6vmin;
   pointer-events: none;
-  align-items:flex;
+  align-items: flex;
   display: flex;
   margin: 10%;
 }
 
-
 .App-header {
-  background-color: #302A27;
+  background-color: #302a27;
   max-height: 8vh;
   align-items: center;
   display: flex;
   font-size: calc(2vmin);
-  color: #FFFFF9;
-  
-  
-
-
+  color: #fffff9;
 }
 
 .title {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  
 }
 
 .App-navigation {
-  background-color: #4E4B44;
+  background-color: #4e4b44;
   min-height: 5vh;
   display: flex;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(7px + 2vmin);
   color: white;
   margin: 0%;
-  
+  align-items: center;
+
 }
 
 .App-pages {
-  color : white; 
+  color: white;
   text-decoration: none;
-  margin-left: 10px; 
-  ;
+  margin-left: 10px;
 }
 
 .App-mainContent {
-  background-color: #FFFFF9;
-  
-  margin : 0; 
-  min-height: 80vh;
-  align-items: center;
+  background-color: #fffff9;
   justify-content: center;
-  display: flex;
+  align-items: flex-start;
+  min-height: 80vh;
   margin-left: 20%;
   margin-right: 20%;
+  display: flex;
   border-bottom-left-radius: 1%;
   border-bottom-right-radius: 1%;
 }
 
 .home-button {
-  all : unset;
-  
+  all: unset;
 }
 
 .Main-Table {
   padding-top: 10px;
   padding-top: 10px;
   text-align: left;
-  border: 1px solid #302A27; 
-  
+  border: 1px solid #302a27;
+}
+#table-data {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 95%;
+
+}
+
+#table-data td,
+#table-data th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#table-data tr:nth-child(even) {
+  background-color: #fffff9;
+}
+
+#table-data tr:hover {
+  background-color: #ebe5dc;
+}
+
+#table-data th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #302a27;
+  color: white;
 }

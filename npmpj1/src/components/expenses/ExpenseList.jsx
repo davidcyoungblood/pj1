@@ -4,6 +4,7 @@ import {  Expenses } from './Expenses';
 
 export const ExpenseList = () => {
     const [exps, setExps] = useState([]);
+    
 
     useEffect(() => {
         axios.get(`http://localhost:8080/pj1/api`)
@@ -13,19 +14,22 @@ export const ExpenseList = () => {
     
 
     return (
-            <table>
+            <table id='table-data'>
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Reason</th>
-                        <th>Status</th>
+                        <th >Id</th>
+                        <th >Name</th>
+                        <th >Reason</th>
+                        <th>Notes </th>
+                        <th >Status</th>
+                        <th> Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {exps.map((exp) => {
+                    {exps.sort((a, b) => a.status.status < b.status.status ? 1 : -1).map((exp) => {
                         
                         return (
-                            <Expenses key={exp.id} exp={exp} expenses={exps} setExps={setExps} />
+                            <Expenses  key={exp.id} exp={exp} expenses={exps} setExps={setExps} />
                         );
                     })}
                 </tbody>

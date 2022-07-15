@@ -6,9 +6,14 @@ export const Home = () => {
 
         <>
           <div className="App-mainContent">
-            <h2>Get Started</h2>
+            <section>
+              <h1>Get Started</h1>
+
+            </section>
+            <button>HELLO</button>
 
           </div>
+
             
         </>
 

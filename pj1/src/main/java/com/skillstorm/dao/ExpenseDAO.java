@@ -15,26 +15,27 @@ import com.skillstorm.beans.Reimbursement;
 public class ExpenseDAO {
 
 	// database credentials
-	
+
 	private Connection connection;
 
 	public ExpenseDAO() throws ClassNotFoundException, SQLException {
-			Class.forName("com.mysql.cj.jdbc.Driver"); 
-			String url = "jdbc:mysql://localhost:3306/reimbursement";
-			String username = "root";
-			String password = "root";
-			this.connection = DriverManager.getConnection(url, username, password);
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		String url = "jdbc:mysql://localhost:3306/reimbursement";
+		String username = "root";
+		String password = "root";
+		this.connection = DriverManager.getConnection(url, username, password);
 	}
 
 	public Expense create(Expense expense) {
 		try {
-			String sql = "insert into Expense(Name, Reason, StatusId) values (?, ?, ?)";
+			String sql = "insert into Expense(Name, Reason, Notes, StatusId) values (?, ?, ?, ?)";
 			PreparedStatement statement = this.connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			statement.setString(1, expense.getName());
 			statement.setString(2, expense.getReason());
+			statement.setString(3, expense.getNotes());
 
 			Reimbursement reimb = new ReimbursementDAO().findById(1);
-			statement.setInt(3, reimb.getId());
+			statement.setInt(4, reimb.getId());
 
 			// executeUpdate returns one if it was executed correctly
 			statement.executeUpdate();
@@ -52,7 +53,7 @@ public class ExpenseDAO {
 
 	public Set<Expense> findAll() throws SQLException {
 		Set<Expense> expense = new HashSet<Expense>();
-		String sql = "select id, Name, reason, statusid from Expense";
+		String sql = "select id, Name, reason, notes, statusid from Expense";
 		PreparedStatement statement = this.connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 		ResultSet resultSet = statement.executeQuery(sql);
 		while (resultSet.next()) {
@@ -62,28 +63,32 @@ public class ExpenseDAO {
 			int id = resultSet.getInt("id");
 			String name = resultSet.getString("Name");
 			String reason = resultSet.getString("reason");
+			String notes = resultSet.getString("notes");
 			int statusId = resultSet.getInt("statusId");
 
 			// store it in the java object
 			row.setId(id);
 			row.setName(name);
 			row.setReason(reason);
+			row.setNotes(notes);
 			row.setStatus(new ReimbursementDAO().findById(statusId));
 
 			expense.add(row);
 		} // end of results
-
+		
+		
+		
 		return expense;
 
 	}
 
 	public Expense findById(int id) throws SQLException {
-		String sql = "select Id, Name, reason, statusId from Expense where Id = ?";
+		String sql = "select Id, Name, reason, notes, statusId from Expense where Id = ?";
 		PreparedStatement statement = this.connection.prepareStatement(sql);
 		statement.setInt(1, id);
 		ResultSet rs = statement.executeQuery();
 		if (rs.next()) {
-			return new Expense(rs.getInt("Id"), rs.getString("Name"), rs.getString("reason"),
+			return new Expense(rs.getInt("Id"), rs.getString("Name"), rs.getString("reason"), rs.getString("notes"),
 					new ReimbursementDAO().findById(rs.getInt("statusId")));
 		} else {
 			return null;
@@ -122,10 +127,5 @@ public class ExpenseDAO {
 		return statement.executeUpdate() == 1;
 
 	}
-
-	/*
-	 * public static void main(String[] args) throws SQLException { ExpenseDAO dao =
-	 * new ExpenseDAO(); System.out.println(dao.findAll()); }
-	 */
 
 }

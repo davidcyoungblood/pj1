@@ -7,6 +7,7 @@ public class Expense {
 	private int id;
 	private String name;
 	private String reason;
+	private String notes; 
 	private Reimbursement status;
 
 	public Expense() {
@@ -14,11 +15,12 @@ public class Expense {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Expense(int id, String name, String reason, Reimbursement status) {
+	public Expense(int id, String name, String reason, String notes, Reimbursement status) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.reason = reason;
+		this.notes = notes; 
 		this.status = status;
 	}
 
@@ -33,6 +35,14 @@ public class Expense {
 		super();
 		this.name = name;
 		this.reason = reason;
+	}
+	
+
+	public Expense(String name, String reason, String notes) {
+		super();
+		this.name = name;
+		this.reason = reason;
+		this.notes = notes;
 	}
 
 	public int getId() {
@@ -58,6 +68,16 @@ public class Expense {
 	public void setReason(String reason) {
 		this.reason = reason;
 	}
+	
+	
+
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
 
 	public Reimbursement getStatus() {
 		return status;
@@ -69,12 +89,13 @@ public class Expense {
 
 	@Override
 	public String toString() {
-		return "Expense [id=" + id + ", name=" + name + ", Reason=" + reason + ", status=" + status.getStatus() + "]";
+		return "Expense [id=" + id + ", name=" + name + ", reason=" + reason + ", notes=" + notes + ", status=" + status
+				+ "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(reason, id, name, status);
+		return Objects.hash(id, name, notes, reason, status);
 	}
 
 	@Override
@@ -86,8 +107,10 @@ public class Expense {
 		if (getClass() != obj.getClass())
 			return false;
 		Expense other = (Expense) obj;
-		return Objects.equals(reason, other.reason) && id == other.id && Objects.equals(name, other.name)
-				&& Objects.equals(status, other.status);
+		return id == other.id && Objects.equals(name, other.name) && Objects.equals(notes, other.notes)
+				&& Objects.equals(reason, other.reason) && Objects.equals(status, other.status);
 	}
+
+	
 
 }

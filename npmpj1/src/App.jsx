@@ -11,9 +11,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <button className="home-button">
-          <img src={logo} className="App-logo" alt="logo" />
-        </button>
+        <a href="/">
+          <button className="home-button">
+            <img src={logo} className="App-logo" alt="logo" />
+          </button>
+        </a>
+
         <h1 className="title">PROJECT 1</h1>
       </header>
       <BrowserRouter>

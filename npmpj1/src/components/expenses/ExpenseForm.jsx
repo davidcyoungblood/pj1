@@ -5,7 +5,8 @@ import { Expenses } from "./Expenses";
 export const ExpenseForm = () => {
   const [exps, setExps] = useState([]);
   const [name, setName] = useState("");
-  const reasonRef = useRef(); // Creates a reference object
+  const reasonRef = useRef();
+  const notesRef = useRef(); // Creates a reference object
   //const statusRef = useRef();
 
   useEffect(() => {
@@ -14,45 +15,48 @@ export const ExpenseForm = () => {
 
   const handleSubmit = async (event) => {
     try {
-      event.preventDefault(); // Prevent the default HTML form submission (AKA Reload the page)
-      // 1. Extract the data
-      // 2. Send out a POST request
-      // 3. When you receive the newly created dev id, add it to the dev array
+      event.preventDefault();
       const { data } = await axios.post("http://localhost:8080/pj1/api", {
-        name, // implied that it's name: name
-        // Think of titleRef.current as <input />
+        name, 
         reason: reasonRef.current.value,
-        //salary: statusRef.current.value,
+        notes: notesRef.current.value,
+
       });
       console.log(data);
       setExps([...exps, data]);
       setName("");
       reasonRef.current.value = null;
-      //statusRef.current.value = "";
+      notesRef.current.value = null;
     } catch (err) {
       console.error(err);
     }
   };
   return (
     <form onSubmit={handleSubmit}>
-      <tr>
-        <td>
+        <tr>
           <input
             name="name"
             value={name}
             onChange={(event) => setName(event.target.value)}
             placeholder="Please enter Name"
           />
-        </td>
-        <td>
+        </tr>
+        <tr>
           <input
             name="reason"
             ref={reasonRef}
             placeholder="Please Enter Reason"
           />
-        </td>
+        </tr>
+        <tr>
+          <input
+            name="notes"
+            ref={notesRef}
+            placeholder="Please Enter Notes"
+          />
+        </tr>
+        
         <button>Add New Expense Report</button>
-      </tr>
     </form>
   );
 };

@@ -1,0 +1,47 @@
+
+§
+java:S1989K"yHandle the following exceptions that could be thrown by "readValue": IOException, StreamReadException, DatabindException.(ìØµ§H5RMINORZVULNERABILITY
+c
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¾Á¿š 0H®RMINORZ
+CODE_SMELL
+|
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ÔêÛáH<RMAJORZBUG
+®
+java:S1989M"yHandle the following exceptions that could be thrown by "readValue": IOException, StreamReadException, DatabindException.(­ÍË(8…ü×› 0HÝRMINORZVULNERABILITY
+¬
+java:S1989;"yHandle the following exceptions that could be thrown by "readValue": IOException, StreamReadException, DatabindException.(òÕâúÿÿÿÿH:RMINORZVULNERABILITY
+a
+java:S1135l"2Complete the task associated to this TODO comment.(ÕÌ®þÿÿÿÿH3RINFOZ
+CODE_SMELL
+a
+java:S1135("2Complete the task associated to this TODO comment.(ÕÌ®þÿÿÿÿH2RINFOZ
+CODE_SMELL
+i
+java:S1135U"2Complete the task associated to this TODO comment.(ÕÌ®þÿÿÿÿ8…ü×› 0HÞRINFOZ
+CODE_SMELL
+ƒ
+java:S1989%"PHandle the following exception that could be thrown by "getWriter": IOException.(…ôŽàüÿÿÿÿH6RMINORZVULNERABILITY
+‹
+java:S1989d"UHandle the following exception that could be thrown by "getInputStream": IOException.(ÕªèÎ8…ü×› 0HÜRMINORZVULNERABILITY
+p	java:S106L"9Replace this use of System.out or System.err by a logger.(„¬†…ÿÿÿÿÿ8´‰æ› 0HïRMAJORZ
+CODE_SMELL
+k	java:S125]"<This block of commented-out lines of code should be removed.(ÖŽ¢ŠýÿÿÿÿH8RMAJORZ
+CODE_SMELL
+ƒ
+java:S1989J"UHandle the following exception that could be thrown by "getInputStream": IOException.(ÕªèÎH4RMINORZVULNERABILITY
+~
+java:S1989?"PHandle the following exception that could be thrown by "getWriter": IOException.(Žœ÷H1RMINORZVULNERABILITY
+¯
+java:S1989e"yHandle the following exceptions that could be thrown by "readValue": IOException, StreamReadException, DatabindException.(ìØµ§8á¬ò› 0HüRMINORZVULNERABILITY
+ƒ
+java:S19899"UHandle the following exception that could be thrown by "getInputStream": IOException.(ÕªèÎH9RMINORZVULNERABILITY
+“
+java:S1989?"eHandle the following exception that could be thrown by "writeValueAsString": JsonProcessingException.(Žœ÷H7RMINORZVULNERABILITY
+a
+java:S1135"2Complete the task associated to this TODO comment.(ÕÌ®þÿÿÿÿH;RINFOZ
+CODE_SMELL
+˜
+java:S1989$"eHandle the following exception that could be thrown by "writeValueAsString": JsonProcessingException.(‰àš¹þÿÿÿÿH0RMINORZVULNERABILITY
+a
+java:S11355"2Complete the task associated to this TODO comment.(ÕÌ®þÿÿÿÿH/RINFOZ
+CODE_SMELL

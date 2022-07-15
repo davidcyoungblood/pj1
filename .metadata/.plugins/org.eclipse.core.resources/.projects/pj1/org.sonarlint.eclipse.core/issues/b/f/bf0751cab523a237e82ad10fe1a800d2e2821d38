@@ -1,25 +1,23 @@
 
-„
-java:S22936"YReplace the type specification in this constructor call with the diamond operator ("<>").(§ξήHRMINORZ
+z
+java:S2095W"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µλωÿÿÿÿH'RBLOCKERZBUG
+S	java:S108/")Either remove or fill this block of code.(Ι®£H&RMAJORZ
 CODE_SMELL
 z
-java:S2095p"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µλωÿÿÿÿHRBLOCKERZBUG
-u
-java:S2095 "OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ί†HRBLOCKERZBUG
-u
-java:S20958"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ί†HRBLOCKERZBUG
+java:S2095}"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µλωÿÿÿÿH$RBLOCKERZBUG
 z
-java:S2095`"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µλωÿÿÿÿHRBLOCKERZBUG
+java:S2095e"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µλωÿÿÿÿH"RBLOCKERZBUG
 z
-java:S2095h"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µλωÿÿÿÿHRBLOCKERZBUG
-z
-java:S2095x"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µλωÿÿÿÿHRBLOCKERZBUG
-z
-java:S2095R"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µλωÿÿÿÿHRBLOCKERZBUG
-S	java:S108.")Either remove or fill this block of code.(Ι®£HRMAJORZ
+java:S2095u"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µλωÿÿÿÿH%RBLOCKERZBUG
+„
+java:S22937"YReplace the type specification in this constructor call with the diamond operator ("<>").(§ξήHRMINORZ
 CODE_SMELL
 L
-java:S11160"Remove this empty statement.(Ερ­υώÿÿÿÿHRMINORZ
+java:S11161"Remove this empty statement.(Ερ­υώÿÿÿÿH RMINORZ
 CODE_SMELL
-g	java:S125€"<This block of commented-out lines of code should be removed.(Ϊϊ‰„HRMAJORZ
-CODE_SMELL
+u
+java:S2095 "OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ί†H)RBLOCKERZBUG
+z
+java:S2095m"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µλωÿÿÿÿH#RBLOCKERZBUG
+u
+java:S20959"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ί†HRBLOCKERZBUG

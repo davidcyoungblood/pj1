@@ -3,6 +3,7 @@ package com.skillstorm.servlet;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Set;
 
 import javax.servlet.ServletException;
@@ -67,6 +68,25 @@ public class Servlet extends HttpServlet { // IS-A servlet
 	}
 
 	// PUT - update
+
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		InputStream requestBody = req.getInputStream();
+		int index = new ObjectMapper().readValue(requestBody, int.class);
+		System.out.println("PUT");
+		int status = new ObjectMapper().readValue(requestBody, int.class);
+		
+
+		try {
+			dao = new ExpenseDAO();
+
+			resp.getWriter().print(new ObjectMapper().writeValueAsString(dao.updateStatus(index, status)));
+		} catch (IOException | SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		resp.setStatus(201);
+	}
 	/*
 	 * @Override protected void doPut(HttpServletRequest req, HttpServletResponse
 	 * resp) throws ServletException, IOException { InputStream requestBody =
@@ -82,6 +102,7 @@ public class Servlet extends HttpServlet { // IS-A servlet
 
 		try {
 			dao = new ExpenseDAO();
+
 			resp.getWriter().print(new ObjectMapper().writeValueAsString(dao.delete(index)));
 		} catch (IOException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block

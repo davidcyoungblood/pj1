@@ -14,6 +14,7 @@ function App() {
         <button className="home-button">
           <img src={logo} className="App-logo" alt="logo" />
         </button>
+        <h1 className="title">PROJECT 1</h1>
       </header>
       <BrowserRouter>
         <Navigation>

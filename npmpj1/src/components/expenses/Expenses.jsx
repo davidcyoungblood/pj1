@@ -5,7 +5,7 @@ export const Expenses = ({exp, setExp, expenses}) => {
     const handleDelete = async (e) => {
         try {
             e.preventDefault(); 
-            await axios.delete(`localhost:8080/pj1/api/${exp.id}`); 
+            await axios.delete(`http://localhost:8080/pj1/api/${exp.id}`); 
             setExp(expenses.filter(expense => exp.id !== expense.id)); 
         }
         catch (err) {

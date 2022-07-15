@@ -1,5 +1,4 @@
-
-
+import { ExpenseForm } from "../components/expenses";
 
 export const Forms = () => {
     
@@ -8,7 +7,7 @@ export const Forms = () => {
         <>
           <div className="App-mainContent">
             <h2>Welcome to The Forms</h2>
-
+            <ExpenseForm/>
           </div>
             
             {/* Calling our ClassComponent this way will auto call render() on our behalf */}

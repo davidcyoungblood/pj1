@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import com.skillstorm.beans.Reimbursement;
 
@@ -30,24 +31,40 @@ public class ReimbursementDAO {
 			return null;
 		}
 	}
+	
+	public Reimbursement findByStatus(String str) throws SQLException {
+		String sql = "select id, status from Reimbursement_status where status = ?";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setString(1, str);
+		ResultSet rs = statement.executeQuery();
+		if (rs.next()) {
+			return new Reimbursement(rs.getInt("id"), rs.getString("status"));
+		} else {
+			return null;
+		}
+	}
 
 	/*
-	 * public Reimbursement create(Reimbursement reimbursement) throws SQLException
-	 * {
+	 * public Reimbursement create() throws SQLException { Reimbursement
+	 * reimbursement = new Reimbursement(); try { String sql =
+	 * "insert into reimbursement_status(status) values (?)"; PreparedStatement
+	 * statement = this.connection.prepareStatement(sql,
+	 * Statement.RETURN_GENERATED_KEYS); reimbursement.setStatus("Pending");
 	 * 
-	 * String sql = "insert into Reimbursement_status(Status) values (?)"; // flag:
-	 * please return my keys
+	 * statement.setString(1, reimbursement.getStatus());
 	 * 
-	 * PreparedStatement statement = connection.prepareStatement(sql,
-	 * Statement.RETURN_GENERATED_KEYS);
-	 * 
-	 * statement.setString(1, reimbursement.getStatus()); statement.executeUpdate();
-	 * 
-	 * // grab the id - ResultSet = statement.getGeneratedKeys() ResultSet rs =
-	 * statement.getGeneratedKeys(); // without the flag, this throws an exception
+	 * statement.executeUpdate(); ResultSet rs = statement.getGeneratedKeys();
 	 * rs.next(); int generatedId = rs.getInt(1); reimbursement.setId(generatedId);
+	 * } catch (SQLException e) { } ; return reimbursement;
 	 * 
-	 * return reimbursement; }
+	 * }
+	 */
+	
+	/*
+	 * public boolean update(int id, String str) throws SQLException { String sql =
+	 * "update reimbursement_status set status = ? where id = ?"; PreparedStatement
+	 * statement = connection.prepareStatement(sql); statement.setString(1, str);
+	 * statement.setInt(2, id); return statement.executeUpdate() == 1; }
 	 */
 
 	/*
@@ -59,11 +76,6 @@ public class ReimbursementDAO {
 	 * }
 	 */
 
-	/*
-	 * public boolean update(int id, String str) throws SQLException { String sql =
-	 * "update reimbursement_status set status = ? where id = ?"; PreparedStatement
-	 * statement = connection.prepareStatement(sql); statement.setString(1, str);
-	 * statement.setInt(2, id); return statement.executeUpdate() == 1; }
-	 */
+
 
 }

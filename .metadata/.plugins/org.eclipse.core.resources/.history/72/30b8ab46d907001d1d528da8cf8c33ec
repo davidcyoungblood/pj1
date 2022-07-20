@@ -1,0 +1,120 @@
+package com.skillstorm.servlet;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.skillstorm.beans.Expense;
+import com.skillstorm.beans.Reimbursement;
+import com.skillstorm.dao.ExpenseDAO;
+import com.skillstorm.dao.ReimbursementDAO;
+
+@WebServlet(urlPatterns = "/api")
+public class Servlet extends HttpServlet { // IS-A servlet
+	ExpenseDAO dao = null;
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// getting an error with connection = null
+
+		try {
+			dao = new ExpenseDAO();
+		} catch (ClassNotFoundException | SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		Set<Expense> allExpense;
+		try {
+			allExpense = dao.findAll();
+			String json = new ObjectMapper().writeValueAsString(allExpense);
+			resp.getWriter().print(json);
+			resp.setContentType("application/json");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	// POST v1.0
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		try {
+			dao = new ExpenseDAO();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		InputStream requestBody = req.getInputStream();
+
+		Expense exp = new ObjectMapper().readValue(requestBody, Expense.class);
+
+		Expense updatedExp = dao.create(exp);
+
+		resp.getWriter().print(new ObjectMapper().writeValueAsString(updatedExp));
+
+		resp.setStatus(201);
+
+		resp.setContentType("application/json");
+	}
+
+	// PUT - update
+
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		try {
+			dao = new ExpenseDAO();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		InputStream requestBody = req.getInputStream();
+
+		Expense exp = new ObjectMapper().readValue(requestBody, Expense.class);
+
+		Expense updatedExp = dao.updateStatus(exp);
+
+		resp.getWriter().print(new ObjectMapper().writeValueAsString(updatedExp));
+
+		resp.setStatus(201);
+		System.out.println(updatedExp.getStatus());
+		
+		resp.setContentType("application/json");
+
+		resp.setStatus(201);
+
+	}
+
+	// DELETE - delete
+
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		InputStream requestBody = req.getInputStream();
+		int index = new ObjectMapper().readValue(requestBody, int.class);
+
+		try {
+			dao = new ExpenseDAO();
+
+			resp.getWriter().print(new ObjectMapper().writeValueAsString(dao.delete(index)));
+		} catch (IOException | SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		resp.setStatus(201);
+
+	}
+
+}

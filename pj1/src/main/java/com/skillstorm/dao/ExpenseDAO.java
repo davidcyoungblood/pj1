@@ -37,7 +37,6 @@ public class ExpenseDAO {
 			Reimbursement reimb = new ReimbursementDAO().findById(1);
 			statement.setInt(4, reimb.getId());
 
-			// executeUpdate returns one if it was executed correctly
 			statement.executeUpdate();
 			ResultSet rs = statement.getGeneratedKeys();
 			rs.next();
@@ -57,7 +56,7 @@ public class ExpenseDAO {
 		PreparedStatement statement = this.connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 		ResultSet resultSet = statement.executeQuery(sql);
 		while (resultSet.next()) {
-			// do something with the row in the set
+
 			Expense row = new Expense();
 			// extracted the values for the database table
 			int id = resultSet.getInt("id");
@@ -75,9 +74,7 @@ public class ExpenseDAO {
 
 			expense.add(row);
 		} // end of results
-		
-		
-		
+
 		return expense;
 
 	}
@@ -96,28 +93,33 @@ public class ExpenseDAO {
 
 	}
 
-	public boolean updateName(int id, String name) throws SQLException {
-		String sql = "update expense set name = ? where id = ?";
-		PreparedStatement statement = this.connection.prepareStatement(sql);
-		statement.setString(1, name);
-		statement.setInt(2, id);
-		return statement.executeUpdate() == 1;
-	}
-
-	public boolean updateReason(int id, String reason) throws SQLException {
-		String sql = "update expense set reason = ? where id = ?";
-		PreparedStatement statement = this.connection.prepareStatement(sql);
-		statement.setString(1, reason);
-		statement.setInt(2, id);
-		return statement.executeUpdate() == 1;
-	}
-
-	public boolean updateStatus(int id, int statusid) throws SQLException {
+	public Expense updateStatus(Expense expense) {
 		String sql = "update expense set statusid = ? where id = ?";
-		PreparedStatement statement = this.connection.prepareStatement(sql);
-		statement.setInt(1, statusid);
-		statement.setInt(2, id);
-		return statement.executeUpdate() == 1;
+		try {
+			PreparedStatement statement = this.connection.prepareStatement(sql);
+
+			
+			//Reimbursement reimbursement = expense.getStatus();
+			//System.out.println(reimbursement);
+			
+			Reimbursement reimbursement = new ReimbursementDAO().findByStatus(expense.getStatus().getStatus()); 
+			
+			
+			/*
+			 * switch (reimbursement.getStatus()) { case "Approved" : reimbursement = new
+			 * ReimbursementDAO().findById(2); break; case "Denied" : reimbursement = new
+			 * ReimbursementDAO().findById(3); break; default : break; }
+			 */
+			
+			expense.setStatus(reimbursement);
+			statement.setInt(1, reimbursement.getId());
+			statement.setInt(2, expense.getId());
+
+			statement.executeUpdate();
+		} catch (SQLException e) {
+		}
+		;
+		return expense;
 	}
 
 	public boolean delete(int id) throws SQLException {

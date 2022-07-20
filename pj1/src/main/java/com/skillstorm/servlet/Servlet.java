@@ -3,6 +3,7 @@ package com.skillstorm.servlet;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -14,7 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.skillstorm.beans.Expense;
+import com.skillstorm.beans.Reimbursement;
 import com.skillstorm.dao.ExpenseDAO;
+import com.skillstorm.dao.ReimbursementDAO;
 
 @WebServlet(urlPatterns = "/api")
 public class Servlet extends HttpServlet { // IS-A servlet
@@ -71,27 +74,28 @@ public class Servlet extends HttpServlet { // IS-A servlet
 
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		InputStream requestBody = req.getInputStream();
-		int index = new ObjectMapper().readValue(requestBody, int.class);
-		System.out.println("PUT");
-		int status = new ObjectMapper().readValue(requestBody, int.class);
-		
-
 		try {
 			dao = new ExpenseDAO();
-
-			resp.getWriter().print(new ObjectMapper().writeValueAsString(dao.updateStatus(index, status)));
-		} catch (IOException | SQLException | ClassNotFoundException e) {
+		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		InputStream requestBody = req.getInputStream();
+
+		Expense exp = new ObjectMapper().readValue(requestBody, Expense.class);
+
+		Expense updatedExp = dao.updateStatus(exp);
+
+		resp.getWriter().print(new ObjectMapper().writeValueAsString(updatedExp));
+
 		resp.setStatus(201);
+		
+		resp.setContentType("application/json");
+
+		resp.setStatus(201);
+
 	}
-	/*
-	 * @Override protected void doPut(HttpServletRequest req, HttpServletResponse
-	 * resp) throws ServletException, IOException { InputStream requestBody =
-	 * req.getInputStream(); }
-	 */
 
 	// DELETE - delete
 

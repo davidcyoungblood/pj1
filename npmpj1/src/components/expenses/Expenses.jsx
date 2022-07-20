@@ -14,16 +14,16 @@ export const Expenses = ({ exp, setExps, expenses }) => {
   const handleApproved = async (e) => {
     try {
       e.preventDefault();
-      await axios.put("http://localhost:8080/pj1/api", {
+      const {data} = await axios.put("http://localhost:8080/pj1/api", {
         id: exp.id,
         name: exp.name,
         reason: exp.reason,
         notes: exp.notes,
         status: "Approved"
-      });
-      
-      
-      //setExps(expenses.filter());
+      }); 
+      expenses = expenses.filter((expense) => exp.id !== expense.id);
+      exp = data; 
+      setExps([...expenses, data])
       
     } catch (err) {
       console.error(err);
@@ -33,14 +33,16 @@ export const Expenses = ({ exp, setExps, expenses }) => {
   const handleDenied = async (e) => {
     try {
       e.preventDefault();
-      await axios.put("http://localhost:8080/pj1/api", {
+      const {data} = await axios.put("http://localhost:8080/pj1/api", {
         id: exp.id,
         name: exp.name,
         reason: exp.reason,
         notes: exp.notes,
         status: "Declined"
       });
-      setExps(expenses);
+      expenses = expenses.filter((expense) => exp.id !== expense.id);
+      exp = data; 
+      setExps([...expenses, exp])
     } catch (err) {
       console.error(err);
     }
@@ -54,10 +56,12 @@ export const Expenses = ({ exp, setExps, expenses }) => {
       <td>{exp.notes}</td>
       <td>{exp.status.status}</td>
       <td>
-        <button onClick={handleDelete}>Delete</button>
-        <button onClick={handleApproved}>Approve</button>
-        <button onClick={handleDenied}>Decline</button>
+        <button onClick={handleDelete} >Delete</button>
+        <button onClick={handleApproved} disabled= {exp.status.status !== "Pending"} >Approve</button>
+        <button onClick={handleDenied } disabled= {exp.status.status !== "Pending"}>Decline</button>
+        
       </td>
     </tr>
+
   );
 };

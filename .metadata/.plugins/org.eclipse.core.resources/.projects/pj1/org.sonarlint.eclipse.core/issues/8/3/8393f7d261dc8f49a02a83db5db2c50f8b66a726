@@ -1,7 +1,7 @@
 
-b	java:S106"9Replace this use of System.out or System.err by a logger.(±ô¼H,RMAJORZ
+d	java:S106#"9Replace this use of System.out or System.err by a logger.(·¸»áHöRMAJORZ
 CODE_SMELL
-c	java:S106#"9Replace this use of System.out or System.err by a logger.(·¸»áH-RMAJORZ
+c	java:S106"9Replace this use of System.out or System.err by a logger.(±ô¼H÷RMAJORZ
 CODE_SMELL
-h	java:S106("9Replace this use of System.out or System.err by a logger.(Ž¨»—ÿÿÿÿÿH.RMAJORZ
+i	java:S106("9Replace this use of System.out or System.err by a logger.(Ž¨»—ÿÿÿÿÿHøRMAJORZ
 CODE_SMELL

@@ -1,4 +1,4 @@
-import { useState } from "react";
+//import { useState } from "react";
 import {ExpenseList} from "../components/expenses";
 
 export const Table = () => {
@@ -9,8 +9,11 @@ export const Table = () => {
         // You may only return ONE JSX element per function
         // This is a fragment. Fragments allow us to return multiple JSX elements
         // They do NOT render to the webpage
+        <>
+        <title>Expense Table</title>
         <section className="App-mainContent">
             <ExpenseList/>
         </section>
+        </>
     );
 }

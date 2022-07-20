@@ -1,0 +1,14 @@
+
+{
+java:S2095%"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿHìRBLOCKERZBUG
+g	java:S125J"<This block of commented-out lines of code should be removed.(¹ý½˜HòRMAJORZ
+CODE_SMELL
+‚
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊÞûÿÿÿÿ8‰úÌ¡0H£RBLOCKERZBUG
+b
+java:S1128"/Remove this unused import 'java.sql.Statement'.(ÏÖÔø8î±ŸÍ¡0HÑRMINORZ
+CODE_SMELL
+s	java:S1251"<This block of commented-out lines of code should be removed.(õÃüÇûÿÿÿÿ8î±ŸÍ¡0HÊRMAJORZ
+CODE_SMELL
+n	java:S125B"<This block of commented-out lines of code should be removed.(›òýã8Ü„ Í¡0HæRMAJORZ
+CODE_SMELL

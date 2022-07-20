@@ -10,16 +10,18 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <header className="App-header">
-        <a href="/">
+
+        <Link className="App-pages" to="/">
           <button className="home-button">
             <img src={logo} className="App-logo" alt="logo" />
           </button>
-        </a>
+        </Link>
 
-        <h1 className="title">PROJECT 1</h1>
+        <h1 className="title">Project One</h1>
       </header>
-      <BrowserRouter>
+      
         <Navigation>
           {/* Component Composition */}
           <section className="App-navigation">

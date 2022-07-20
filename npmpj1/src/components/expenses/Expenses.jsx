@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useState, useEffect, useRef, useContext } from "react";
 
 export const Expenses = ({ exp, setExps, expenses }) => {
   const handleDelete = async (e) => {
@@ -22,6 +21,10 @@ export const Expenses = ({ exp, setExps, expenses }) => {
         notes: exp.notes,
         status: "Approved"
       });
+      
+      
+      //setExps(expenses.filter());
+      
     } catch (err) {
       console.error(err);
     }

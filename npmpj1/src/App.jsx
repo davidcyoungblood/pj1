@@ -15,21 +15,19 @@ function App() {
 
         <Link className="App-pages" to="/">
           <button className="home-button">
-            <img src={logo} className="App-logo" alt="logo" />
+            <img src={logo} id="App-logo" alt="logo" />
           </button>
         </Link>
 
-        <h1 className="title">Project One</h1>
+        <h1>Project One</h1>
       </header>
       
         <Navigation>
           {/* Component Composition */}
           <section className="App-navigation">
-            {/* Anchor tags refresh the page. Instead, I'll use Link from React-Router-dom */}
-            {/* <a href="/day1">Day1</a> */}
             <div className="App-pages">
               <Link className="App-pages" to="/expense">
-                Add Expense
+                New Reimbursement
               </Link>
             </div>
             <div className="App-pages">

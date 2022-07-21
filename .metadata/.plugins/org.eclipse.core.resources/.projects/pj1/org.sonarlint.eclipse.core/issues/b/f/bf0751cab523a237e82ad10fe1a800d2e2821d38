@@ -1,28 +1,28 @@
 
+v
+java:S2095 "OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(šß˜†HªRBLOCKERZBUG
+{
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µšëùÿÿÿÿH«RBLOCKERZBUG
+s	java:S125m"<This block of commented-out lines of code should be removed.(˜Ã¥´úÿÿÿÿ8ÅÄ“Í¡0H¬RMAJORZ
+CODE_SMELL
 …
-java:S22936"YReplace the type specification in this constructor call with the diamond operator ("<>").(œ§îŞH†RMINORZ
+java:S22936"YReplace the type specification in this constructor call with the diamond operator ("<>").(œ§îŞH®RMINORZ
 CODE_SMELL
-s	java:S125m"<This block of commented-out lines of code should be removed.(˜Ã¥´úÿÿÿÿ8ÅÄ“Í¡0HˆRMAJORZ
-CODE_SMELL
-v
-java:S2095 "OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(šß˜†HŠRBLOCKERZBUG
-{
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µšëùÿÿÿÿH‹RBLOCKERZBUG
-[	java:S108w")Either remove or fill this block of code.(É®£8÷£“Ë¡0HŒRMAJORZ
-CODE_SMELL
-{
-java:S2095T"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µšëùÿÿÿÿHRBLOCKERZBUG
-‚
-java:S2095c"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µšëùÿÿÿÿ8ÙŒÄ¡0HRBLOCKERZBUG
-M
-java:S11160"Remove this empty statement.(Åñ­õşÿÿÿÿHRMINORZ
-CODE_SMELL
-s	java:S125f"<This block of commented-out lines of code should be removed.(õ¿î üÿÿÿÿ8°€”Í¡0H‘RMAJORZ
-CODE_SMELL
-v
-java:S20958"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(šß˜†H“RBLOCKERZBUG
 T
-java:S1116y"Remove this empty statement.(Åñ­õşÿÿÿÿ8ûÁ“Ë¡0H”RMINORZ
+java:S1116y"Remove this empty statement.(Åñ­õşÿÿÿÿ8ûÁ“Ë¡0H°RMINORZ
 CODE_SMELL
-T	java:S108.")Either remove or fill this block of code.(É®£H–RMAJORZ
+{
+java:S2095T"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µšëùÿÿÿÿH²RBLOCKERZBUG
+v
+java:S20958"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(šß˜†H³RBLOCKERZBUG
+M
+java:S11160"Remove this empty statement.(Åñ­õşÿÿÿÿH´RMINORZ
+CODE_SMELL
+T	java:S108.")Either remove or fill this block of code.(É®£H¶RMAJORZ
+CODE_SMELL
+‚
+java:S2095c"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(µšëùÿÿÿÿ8ÙŒÄ¡0H·RBLOCKERZBUG
+[	java:S108w")Either remove or fill this block of code.(É®£8÷£“Ë¡0H¸RMAJORZ
+CODE_SMELL
+s	java:S125f"<This block of commented-out lines of code should be removed.(õ¿î üÿÿÿÿ8°€”Í¡0H¹RMAJORZ
 CODE_SMELL

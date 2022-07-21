@@ -2,7 +2,11 @@ export const Error = () => {
     return (
         <>
         <title>Error</title>
-        <h1>The page you were looking for could not be found {':('}</h1>
+        <div className="App-mainContent">
+        <section id="home-title">404</section>
+        <h1>Page Not Found</h1>
+        </div>
+        
         </>
     )
 }

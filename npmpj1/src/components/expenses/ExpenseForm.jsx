@@ -1,6 +1,5 @@
-import { useState, useEffect, useRef, useContext } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { Expenses } from "./Expenses";
 
 export const ExpenseForm = () => {
   const [exps, setExps] = useState([]);

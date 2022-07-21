@@ -32,7 +32,7 @@ export const ExpenseForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <tr>
-        <h5>Name</h5>
+        <h5 id= "form-input-title">Name:</h5>
         <input
           required
           className="forms"
@@ -43,7 +43,7 @@ export const ExpenseForm = () => {
         />
       </tr>
       <tr>
-        <h5>Reason for Reimbursement</h5>
+        <h5  id= "form-input-title">Reason for Reimbursement:</h5>
         <input
           required
           className="forms"
@@ -53,10 +53,9 @@ export const ExpenseForm = () => {
         />
       </tr>
       <tr>
-        <h5>Additional Notes</h5>
+        <h5  id= "form-input-title">Additional Notes:</h5>
         <input
           className="forms"
-          id="form_input"
           name="notes"
           ref={notesRef}
           placeholder="Your Notes"

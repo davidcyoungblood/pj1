@@ -5,8 +5,9 @@ export const Forms = () => {
     <>
       <title>Add Expense Form</title>
       <section className="App-mainContent">
-        <h2>Welcome to The Forms</h2>
-        <section className="jsx-content">
+        <br />
+        <h1>Add New Reimbursement</h1>
+        <section id="jsx-content">
           <ExpenseForm />
         </section>
       </section>

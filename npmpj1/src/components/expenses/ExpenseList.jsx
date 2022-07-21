@@ -14,8 +14,9 @@ export const ExpenseList = () => {
     
 
     return (
-            <table id='table-data'>
-                <thead>
+            <div>
+            <table className='table'>
+            <thead>
                     <tr>
                         <th >Id</th>
                         <th >Name</th>
@@ -33,5 +34,6 @@ export const ExpenseList = () => {
                     })}
                 </tbody>
             </table>
+            </div>
     );
 }

@@ -7,9 +7,7 @@ export const Table = () => {
         <>
         <title>Expense Table</title>
         <div className="App-mainContent">
-            <section className="jsx-content">
             <ExpenseList/>
-            </section>
         
             
         </div>

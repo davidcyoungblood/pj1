@@ -3,7 +3,6 @@
   background-color: #ebe5dc;
   min-height: 100vmin;
 }
-
 .home-button {
   all: unset;
   position: absolute;
@@ -17,43 +16,34 @@
   justify-content: left;
   margin: 10%;
 }
-
 .App-header {
   background-color: #302a27;
   min-height: 10vh;
   align-items: center;
   display: flex;
   justify-content: center;
-  font-size: calc(10px + 5vmin);
+  font-size: calc(20px + 5vmin);
   font-weight: bold;
   color: #fffff9;
-
 }
-
-
 .App-navigation {
   background-color: #4e4b44;
   min-height: 4vh;
   display: flex;
   color: white;
   margin: 0%;
-  justify-content: flex-end;
-  
+  justify-content: flex-end; 
 }
-
 .App-pages {
   color: white;
   text-decoration: none;
   margin-right: 15px;
-  font-size: 2vh;
+  font-size: calc(5px + 2vh);
   align-content: center;
 }
-
 .App-pages:hover {
   color: #D3D2D1;
 }
-
-
 .App-mainContent {
   background-color: #fffff9;
   min-height: 80vh;
@@ -61,28 +51,11 @@
   margin-right: 20%;
   border-bottom-left-radius: 1%;
   border-bottom-right-radius: 1%;
-  justify-content: center;
-  align-content: space-around;
 }
-
-.jsx-content {
+#jsx-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  
-}
-
-.forms {
-  margin: 10px;
-  min-width: 50vh;
-  border-radius: .1cm;
-  border: 1px solid #4e4b44;
-  box-sizing: border-box;
-  
-}
-#form_input {
-  height: 50px;
-  
 }
 
 #home-title {
@@ -96,68 +69,72 @@
   font-size: 5vh;
   font-weight: bold;
 }
-
 .gs-button {
   all: unset;
   margin: 10px;
   background-color: #FF443A;
   border-radius: .2cm;
   color: white;
-
-  
+  padding: 1vh;
 }
-
 .gs-button:hover {
   background-color: #FF1407;
 }
-
 #gs-buttons {
   color: white;
   text-decoration: none;
   font-size: 2vh;
   font-weight: bold;
   align-items: center;
-  padding: 2vh;
-  
+  padding: 1vh;
 }
 
+.forms {
+  margin: 10px;
+  min-width: 45vh;
+  border-radius: .1cm;
+  border: 1px solid #4e4b44;
+  box-sizing: border-box;
+  display: flex;
+  padding: 10px;
+}
 .form-button {
   all: unset;
   margin: 10px;
   background-color: #FF443A;
   border-radius: .2cm;
-  padding: 10px;
+  padding: 1vh;
   color: white;
   font-size: medium;
-
 }
-
 .form-button:hover {
   background-color: #FF1407;
 }
-
+#form-input-title {
+  padding: 10px;
+  display: flex;
+}
 
 .button-delete {
   all: unset;
   background-color: #302a27;
-  padding: 10px;
+  padding: 7px;
   border-radius: .2cm;
-  
 }
-
 .button-approve {
   all: unset;
   background-color: #FF443A;
-  padding: 10px; 
-  margin-right: 2px;
+  padding: 7px; 
+  
   border-radius: .2cm;
   border: white;  
 }
 .button-decline {
   all: unset;
   background-color: #4e4b44;
-  padding: 10px;
-  margin-right: 2px;
+  padding: 7px;
+  margin-left: 1vh;
+  margin-right: 1vh;
   border-radius: .2cm;
   
 }
@@ -170,34 +147,33 @@
   color: #D3D2D1;
 }
 
-#table-data {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px solid #4e4b44;
-  table-layout: auto;
-  width: 95%;
-}
 
-#table-data td,
-#table-data th {
-  border: 2px solid #4e4b44;
-  padding: 10px;
-  text-align: center;
-  
-  
-}
+.table {
+  width: 100%;
+  background-color: #fffff9;
+  overflow: auto; 
 
-#table-data tr:nth-child(even) {
+}
+.table tr:hover {
   background-color: #ebe5dc;
+  overflow: auto;
+}
+.table th{
+  background-color: #302a27;
+  color: #ebe5dc;
+  border: 2px solid #302a27;
+  text-align: center;
+  overflow: auto;
 }
 
+.table tr{
+  overflow: auto;
+}
 
-#table-data th {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  background-color: #302a27;
-  color: white;
+.table td {
+  border: 2px solid #ebe5dc;
+  overflow: auto;
+  
 }
 
 

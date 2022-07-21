@@ -55,11 +55,10 @@ export const Expenses = ({ exp, setExps, expenses }) => {
       <td>{exp.reason}</td>
       <td>{exp.notes}</td>
       <td>{exp.status.status}</td>
-      <td>
-        <button onClick={handleDelete} >Delete</button>
-        <button onClick={handleApproved} disabled= {exp.status.status !== "Pending"} >Approve</button>
-        <button onClick={handleDenied } disabled= {exp.status.status !== "Pending"}>Decline</button>
-        
+      <td id="td-actions">
+        <button onClick={handleApproved} disabled= {exp.status.status !== "Pending"} className = "button-approve" id = "button-detail">Approve</button>
+        <button onClick={handleDenied } disabled= {exp.status.status !== "Pending"} className = "button-decline" id = "button-detail">Decline</button>
+        <button onClick={handleDelete} className = "button-delete" id = "button-detail"> Delete</button>
       </td>
     </tr>
 

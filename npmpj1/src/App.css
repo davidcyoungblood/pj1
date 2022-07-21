@@ -11,22 +11,23 @@
   top: 0;
 }
 #App-logo {
-  max-height: 6vmin;
+  max-height: 8vh;
   pointer-events: none;
   align-items: flex-start;
   justify-content: left;
   margin: 10%;
-
 }
 
 .App-header {
   background-color: #302a27;
-  min-height: 8vh;
+  min-height: 10vh;
   align-items: center;
   display: flex;
   justify-content: center;
-  font-size: calc(2vmin);
+  font-size: calc(10px + 5vmin);
+  font-weight: bold;
   color: #fffff9;
+
 }
 
 
@@ -36,8 +37,7 @@
   display: flex;
   color: white;
   margin: 0%;
-  text-align: center;
-  justify-content: end;
+  justify-content: flex-end;
   
 }
 
@@ -45,9 +45,14 @@
   color: white;
   text-decoration: none;
   margin-right: 15px;
-  font-size: .7cm;
+  font-size: 2vh;
   align-content: center;
 }
+
+.App-pages:hover {
+  color: #D3D2D1;
+}
+
 
 .App-mainContent {
   background-color: #fffff9;
@@ -67,58 +72,133 @@
   
 }
 
+.forms {
+  margin: 10px;
+  min-width: 50vh;
+  border-radius: .1cm;
+  border: 1px solid #4e4b44;
+  box-sizing: border-box;
+  
+}
+#form_input {
+  height: 50px;
+  
+}
 
+#home-title {
+  font-size: 10vh;
+  font-weight: bolder;
+}
+#home-text {
+  font-size: 2vh;
+}
+#home-gs-text{
+  font-size: 5vh;
+  font-weight: bold;
+}
 
 .gs-button {
-  background-color: #FF443A;
-  border: none; 
-  padding: 10px;
+  all: unset;
   margin: 10px;
-  border-radius: .6cm;
+  background-color: #FF443A;
+  border-radius: .2cm;
+  color: white;
 
-  justify-content: center;
+  
 }
 
-#link {
+.gs-button:hover {
+  background-color: #FF1407;
+}
+
+#gs-buttons {
+  color: white;
   text-decoration: none;
-  color: white; 
-  font-size: larger;
+  font-size: 2vh;
+  font-weight: bold;
+  align-items: center;
+  padding: 2vh;
+  
+}
+
+.form-button {
+  all: unset;
+  margin: 10px;
+  background-color: #FF443A;
+  border-radius: .2cm;
+  padding: 10px;
+  color: white;
+  font-size: medium;
+
+}
+
+.form-button:hover {
+  background-color: #FF1407;
 }
 
 
-.Main-Table {
-  padding-top: 10px;
-  padding-top: 10px;
-  text-align: left;
-  border: 1px solid #302a27;
+.button-delete {
+  all: unset;
+  background-color: #302a27;
+  padding: 10px;
+  border-radius: .2cm;
+  
 }
+
+.button-approve {
+  all: unset;
+  background-color: #FF443A;
+  padding: 10px; 
+  margin-right: 2px;
+  border-radius: .2cm;
+  border: white;  
+}
+.button-decline {
+  all: unset;
+  background-color: #4e4b44;
+  padding: 10px;
+  margin-right: 2px;
+  border-radius: .2cm;
+  
+}
+#button-detail {
+  text-decoration: none;
+  color: white;
+}
+#button-detail:disabled {
+  background-color: #A7A5A2;
+  color: #D3D2D1;
+}
+
 #table-data {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #4e4b44;
+  table-layout: auto;
   width: 95%;
 }
 
 #table-data td,
 #table-data th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+  border: 2px solid #4e4b44;
+  padding: 10px;
+  text-align: center;
+  
+  
 }
 
 #table-data tr:nth-child(even) {
-  background-color: #fffff9;
-}
-
-#table-data tr:hover {
   background-color: #ebe5dc;
 }
 
+
 #table-data th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
   background-color: #302a27;
   color: white;
 }
+
 
 

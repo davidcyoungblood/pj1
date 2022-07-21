@@ -8,17 +8,17 @@ export const Home = () => {
       <div className="App-mainContent">
         <br />
         <br />
+        <section id="home-title">Welcome!</section>
+        <p id ="home-text">This website demostrates the requirements for project 1.  </p>
         <br />
-        <br />
-          <h2>Get Started</h2>
-        <br />
-      <button className="gs-button" >
-          <Link to="/expense" id="link">
-          Add Expense
+          <section id="home-gs-text">Get Started</section>
+      <button className="gs-button">
+          <Link to="/expense" id="gs-buttons">
+          New Reimbursement
           </Link>
         </button>
         <button className="gs-button">
-          <Link to="/table" id="link">
+          <Link to="/table" id="gs-buttons">
           View Table
           </Link>
         </button>

@@ -17,10 +17,9 @@ export const ExpenseForm = () => {
     try {
       event.preventDefault();
       const { data } = await axios.post("http://localhost:8080/pj1/api", {
-        name, 
+        name,
         reason: reasonRef.current.value,
         notes: notesRef.current.value,
-
       });
       console.log(data);
       setExps([...exps, data]);
@@ -33,30 +32,41 @@ export const ExpenseForm = () => {
   };
   return (
     <form onSubmit={handleSubmit}>
-        <tr>
-          <input
-            name="name"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-            placeholder="Please enter Name"
-          />
-        </tr>
-        <tr>
-          <input
-            name="reason"
-            ref={reasonRef}
-            placeholder="Please Enter Reason"
-          />
-        </tr>
-        <tr>
-          <input
-            name="notes"
-            ref={notesRef}
-            placeholder="Please Enter Notes"
-          />
-        </tr>
-        
-        <button>Add New Expense Report</button>
+      <tr>
+        <h5>Name</h5>
+        <input
+          required
+          className="forms"
+          name="name"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+          placeholder="Your Name"
+        />
+      </tr>
+      <tr>
+        <h5>Reason for Reimbursement</h5>
+        <input
+          required
+          className="forms"
+          name="reason"
+          ref={reasonRef}
+          placeholder="Your Reason"
+        />
+      </tr>
+      <tr>
+        <h5>Additional Notes</h5>
+        <input
+          className="forms"
+          id="form_input"
+          name="notes"
+          ref={notesRef}
+          placeholder="Your Notes"
+        />
+      </tr>
+
+      <button className="form-button">
+        <h5>Add Reimbursement</h5>
+      </button>
     </form>
   );
 };

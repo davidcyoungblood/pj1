@@ -21,13 +21,12 @@ export const ExpenseList = () => {
                         <th >Name</th>
                         <th >Reason</th>
                         <th>Notes </th>
-                        <th >Status</th>
-                        <th> Actions</th>
+                        <th>Status</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {exps.sort((a, b) => a.status.status < b.status.status ? 1 : -1).map((exp) => {
-                        
+                    {exps.sort((a, b) =>  a.id > b.id ? 1 : -1).sort((a, b) => a.status.status < b.status.status ? 1 : -1 ).map((exp) => {
                         return (
                             <Expenses  key={exp.id} exp={exp} expenses={exps} setExps={setExps} />
                         );

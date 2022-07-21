@@ -18,8 +18,7 @@ function App() {
             <img src={logo} id="App-logo" alt="logo" />
           </button>
         </Link>
-
-        <h1>Project One</h1>
+        Project 1
       </header>
       
         <Navigation>

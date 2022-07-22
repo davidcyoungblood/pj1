@@ -9,7 +9,6 @@ public class Reimbursement {
 
 	public Reimbursement() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Reimbursement(int id, String status) {

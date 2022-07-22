@@ -8,8 +8,8 @@ export const ExpenseList = () => {
 
     useEffect(() => {
         axios.get(`http://localhost:8080/pj1/api`)
-            .then(res => setExps(res.data)); // sets my devs state to be that array of devs
-    }, []); // Be sure this is an empty array
+            .then(res => setExps(res.data)); 
+    }, []);
     
     
 

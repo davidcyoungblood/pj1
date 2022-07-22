@@ -6,7 +6,7 @@ export const Forms = () => {
       <title>Add Expense Form</title>
       <section className="App-mainContent">
         <br />
-        <h1>Add New Reimbursement</h1>
+        <h1>Add New Expense Report</h1>
         <section id="jsx-content">
           <ExpenseForm />
         </section>

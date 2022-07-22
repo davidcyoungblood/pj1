@@ -26,6 +26,9 @@ public class ExpenseDAO {
 		this.connection = DriverManager.getConnection(url, username, password);
 	}
 
+	//CRUB Application
+	
+	//Create
 	public Expense create(Expense expense) {
 		try {
 			String sql = "insert into Expense(Name, Reason, Notes, StatusId) values (?, ?, ?, ?)";
@@ -49,7 +52,7 @@ public class ExpenseDAO {
 		return expense;
 
 	}
-
+	// Read
 	public Set<Expense> findAll() throws SQLException {
 		Set<Expense> expense = new HashSet<Expense>();
 		String sql = "select id, Name, reason, notes, statusid from Expense";
@@ -93,6 +96,7 @@ public class ExpenseDAO {
 
 	}
 
+	//update 
 	public Expense updateStatus(Expense expense) {
 		String sql = "update expense set statusid = ? where id = ?";
 		try {
@@ -100,12 +104,13 @@ public class ExpenseDAO {
 
 			
 			//Reimbursement reimbursement = expense.getStatus();
-			//System.out.println(reimbursement);
 			
 			Reimbursement reimbursement = new ReimbursementDAO().findByStatus(expense.getStatus().getStatus()); 
 			
 			
-			/*
+			/* 		*** This was a good way to get update the status but I created a method in 
+			 * 				ReimbursementDAO findByStatus to use in the above code 
+			 * 				because I didn't want to code in foreign keys this way could work too though ***
 			 * switch (reimbursement.getStatus()) { case "Approved" : reimbursement = new
 			 * ReimbursementDAO().findById(2); break; case "Denied" : reimbursement = new
 			 * ReimbursementDAO().findById(3); break; default : break; }
@@ -122,6 +127,7 @@ public class ExpenseDAO {
 		return expense;
 	}
 
+	//delete
 	public boolean delete(int id) throws SQLException {
 		String sql = "delete from Expense where Id = ?";
 		PreparedStatement statement = this.connection.prepareStatement(sql);

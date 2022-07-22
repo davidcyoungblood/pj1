@@ -45,6 +45,10 @@ public class ReimbursementDAO {
 	}
 
 	/*
+	 * 		Started out the application with this but didn't need the 
+	 * 			end user to update/create/or delete reimbursement status
+	 * 			I decided to omit these sections of code
+	 * 
 	 * public Reimbursement create() throws SQLException { Reimbursement
 	 * reimbursement = new Reimbursement(); try { String sql =
 	 * "insert into reimbursement_status(status) values (?)"; PreparedStatement

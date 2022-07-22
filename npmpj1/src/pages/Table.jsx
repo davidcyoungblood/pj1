@@ -6,11 +6,10 @@ export const Table = () => {
 
         <>
         <title>Expense Table</title>
-        <div className="App-mainContent">
-            <ExpenseList/>
-        
+        <section className = "App-mainContent" id="jsx-content">
+        <ExpenseList/>
+        </section>
             
-        </div>
         </>
     );
 }

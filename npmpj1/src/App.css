@@ -54,7 +54,6 @@
 }
 #jsx-content {
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
@@ -88,7 +87,6 @@
   align-items: center;
   padding: 1vh;
 }
-
 .forms {
   margin: 10px;
   min-width: 45vh;
@@ -114,45 +112,44 @@
   padding: 10px;
   display: flex;
 }
-
 .button-delete {
   all: unset;
   background-color: #302a27;
-  padding: 7px;
-  border-radius: .2cm;
+  padding: 0.5vh;
+  border-radius: .1cm;
+  margin: 1px;
 }
 .button-approve {
   all: unset;
   background-color: #FF443A;
-  padding: 7px; 
-  
-  border-radius: .2cm;
-  border: white;  
+  padding: 0.5vh; 
+  border-radius: .1cm;
+  border: white; 
+  margin: 1px; 
 }
 .button-decline {
   all: unset;
   background-color: #4e4b44;
-  padding: 7px;
-  margin-left: 1vh;
-  margin-right: 1vh;
-  border-radius: .2cm;
-  
+  padding: .5vh;
+  border-radius: .1cm;
+  margin: 2px; 
 }
 #button-detail {
   text-decoration: none;
   color: white;
+  font-size: calc(4px + 1vh);
+  font-weight: 400;
 }
 #button-detail:disabled {
   background-color: #A7A5A2;
   color: #D3D2D1;
 }
-
-
 .table {
-  width: 100%;
+  table-layout: fixed;
   background-color: #fffff9;
   overflow: auto; 
-
+  
+  
 }
 .table tr:hover {
   background-color: #ebe5dc;
@@ -162,14 +159,13 @@
   background-color: #302a27;
   color: #ebe5dc;
   border: 2px solid #302a27;
-  text-align: center;
   overflow: auto;
-}
 
+}
 .table tr{
   overflow: auto;
+  font-size: large;
 }
-
 .table td {
   border: 2px solid #ebe5dc;
   overflow: auto;

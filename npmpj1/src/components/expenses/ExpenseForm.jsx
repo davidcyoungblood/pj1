@@ -5,12 +5,11 @@ export const ExpenseForm = () => {
   const [exps, setExps] = useState([]);
   const [name, setName] = useState("");
   const reasonRef = useRef();
-  const notesRef = useRef(); // Creates a reference object
-  //const statusRef = useRef();
+  const notesRef = useRef();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/pj1/api`).then((res) => setExps(res.data)); // sets my devs state to be that array of devs
-  }, []); // Be sure this is an empty array
+    axios.get(`http://localhost:8080/pj1/api`).then((res) => setExps(res.data)); 
+  }, []); 
 
   const handleSubmit = async (event) => {
     try {
@@ -63,7 +62,7 @@ export const ExpenseForm = () => {
       </tr>
 
       <button className="form-button">
-        <h5>Add Reimbursement</h5>
+        <h5>Report Expense</h5>
       </button>
     </form>
   );

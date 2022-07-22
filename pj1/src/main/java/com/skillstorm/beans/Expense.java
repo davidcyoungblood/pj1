@@ -12,7 +12,6 @@ public class Expense {
 
 	public Expense() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Expense(int id, String name, String reason, String notes, Reimbursement status) {

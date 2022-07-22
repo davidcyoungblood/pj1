@@ -20,17 +20,15 @@ import com.skillstorm.dao.ExpenseDAO;
 import com.skillstorm.dao.ReimbursementDAO;
 
 @WebServlet(urlPatterns = "/api")
-public class Servlet extends HttpServlet { // IS-A servlet
+public class Servlet extends HttpServlet {
 	ExpenseDAO dao = null;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// getting an error with connection = null
 
 		try {
 			dao = new ExpenseDAO();
 		} catch (ClassNotFoundException | SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		Set<Expense> allExpense;
@@ -40,20 +38,17 @@ public class Servlet extends HttpServlet { // IS-A servlet
 			resp.getWriter().print(json);
 			resp.setContentType("application/json");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 	}
 
-	// POST v1.0
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		try {
 			dao = new ExpenseDAO();
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -77,7 +72,6 @@ public class Servlet extends HttpServlet { // IS-A servlet
 		try {
 			dao = new ExpenseDAO();
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -97,8 +91,6 @@ public class Servlet extends HttpServlet { // IS-A servlet
 
 	}
 
-	// DELETE - delete
-
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		InputStream requestBody = req.getInputStream();
@@ -109,7 +101,6 @@ public class Servlet extends HttpServlet { // IS-A servlet
 
 			resp.getWriter().print(new ObjectMapper().writeValueAsString(dao.delete(index)));
 		} catch (IOException | SQLException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		resp.setStatus(201);

@@ -14,7 +14,7 @@ export const Home = () => {
           <section id="home-gs-text">Get Started</section>
       <button className="gs-button">
           <Link to="/expense" id="gs-buttons">
-          New Reimbursement
+          Add New Expense
           </Link>
         </button>
         <button className="gs-button">

@@ -20,11 +20,10 @@ function App() {
       </header>
       
         <Navigation>
-          {/* Component Composition */}
           <section className="App-navigation">
             <div className="App-pages">
               <Link className="App-pages" to="/expense">
-                New Reimbursement
+                Add New Expense
               </Link>
             </div>
             <div className="App-pages">
